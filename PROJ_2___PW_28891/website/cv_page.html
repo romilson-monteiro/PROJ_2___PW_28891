@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>Curriculum Vitae</title>
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <div class="icon"><i class=""></i> Curriculum Vitae</div>
+      <nav class="nav">
+        <ul>
+          <li class="login"><a href="./login.html">Login</a></li>
+          <li class="signup"><a href="./register.html">Sign up</a></li>
+          <li id="logout-button" style="display: none">
+            <button type="submit" onclick="logout()">Logout</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="info_aboutme">
+        <div class="info">
+          <div class="info_name">
+            <h1 id="name"></h1>
+            <h2 id="job"></h2>
+          </div>
+          <article class="abautemeArtical">
+            <h2>About Me</h2>
+            <p id="about-me-content"></p>
+            <div id="editaboutme"></div>
+          </article>
+        </div>
+        <div class="image">
+          <img src="./perfil.png" alt="Romilson Monteiro" />
+        </div>
+
+        <button
+          id="add-about-me-button"
+          style="display: none"
+          onclick="toggleAboutMeForm()"
+        >
+          Add About Me
+        </button>
+
+        <form id="about-me-form" style="display: none" abautme-data-mode="">
+          <div class="form-header">
+            <button
+              type="button"
+              id="hide-form-button"
+              onclick="toggleAboutMeForm()"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <input type="text" id="name-input" placeholder="Enter your name" />
+          <input type="text" id="job-input" placeholder="Enter your job" />
+          <textarea
+            id="about-me-textarea"
+            placeholder="Enter your About Me"
+          ></textarea>
+          <button type="button" onclick="addAboutMe()">Add</button>
+        </form>
+      </div>
+      <div class="main-content">
+        <aside>
+          <div class="contact">
+            <h2 class="list_1_title">Contat</h2>
+            <ul id="contact-list"></ul>
+            <button
+              type="button"
+              style="display: none"
+              class="more-button"
+              id="add-contact-button"
+              onclick="toggleContactForm()"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+
+            <form class="list_2-form" id="contact-form" style="display: none">
+              <div class="form-header">
+                <button
+                  type="button"
+                  id="hide-form-button"
+                  onclick="toggleContactForm()"
+                >
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="form-body">
+                <div class="input-group">
+                  <select class="contact-type" id="contact-type">
+                    <option value="email">Email</option>
+                    <option value="linkedin">LinkedIn</option>
+                    <option value="phone">Phone</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="facebook">Facebook</option>
+                  </select>
+                  <input
+                    type="text"
+                    class="contact-info"
+                    id="contact-info"
+                    placeholder="contat"
+                  />
+                  <button
+                    type="button"
+                    class="add-button"
+                    onclick="addContact()"
+                  >
+                    Add
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="language">
+            <h2 class="list_1_title">Languages</h2>
+
+            <ul id="languages-list" class="languages-list"></ul>
+            <button
+              style="display: none"
+              class="more-button"
+              id="add-language-button"
+              onclick="toggleLanguageForm()"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+
+            <form
+              class="languagee-form"
+              id="language-form"
+              style="display: none"
+              data-mode=""
+            >
+              <div class="form-header">
+                <button
+                  type="button"
+                  id="hide-form-button"
+                  onclick="toggleLanguageForm()"
+                >
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="form-body">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="language-name"
+                    id="language-name"
+                    placeholder="Language name"
+                  />
+                  <input
+                    type="number"
+                    class="language-level"
+                    id="language-level"
+                    placeholder="Language level"
+                  />
+                  <button
+                    type="button"
+                    class="add-button"
+                    onclick="addLanguage()"
+                  >
+                    Add
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="skills">
+            <h2 class="list_1_title">Skills</h2>
+
+            <ul id="skills-list" class="languages-list"></ul>
+            <button
+              style="display: none"
+              class="more-button"
+              id="add-skill-button"
+              onclick="toggleSkillForm()"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+
+            <form
+              class="languagee-form"
+              id="skill-form"
+              style="display: none"
+              skill-data-mode=""
+            >
+              <div class="form-header">
+                <button
+                  type="button"
+                  id="hide-form-button"
+                  onclick="toggleSkillForm()"
+                >
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="form-body">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="language-name"
+                    id="skill-name"
+                    placeholder="Skill name"
+                  />
+                  <input
+                    type="number"
+                    class="language-level"
+                    id="skill-level"
+                    placeholder="Skill level"
+                  />
+                  <button type="button" class="add-button" onclick="addSkill()">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </aside>
+        <section class="content">
+          <article>
+            <h2 class="list_2_title">Education</h2>
+            <ul id="education-list" class="list_2"></ul>
+            <button
+              style="display: none"
+              class="list_2_more-button"
+              id="add-education-button"
+              onclick="toggleEducationForm()"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+
+            <form
+              class="list_2-form"
+              id="education-form"
+              style="display: none"
+              education-data-mode=""
+            >
+              <div class="form-header">
+                <button
+                  type="button"
+                  id="hide-form-button"
+                  onclick="toggleEducationForm()"
+                >
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="form-body">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="school-name"
+                    id="school-name"
+                    placeholder="School name"
+                  />
+                  <input
+                    type="text"
+                    class="school-year"
+                    id="school-year"
+                    placeholder="School year Example:  2014 - 2021"
+                  />
+                  <textarea
+                    class="school-description"
+                    id="school-description"
+                    placeholder="School description"
+                  ></textarea>
+                  <button
+                    type="button"
+                    class="add-button"
+                    onclick="addEducation()"
+                  >
+                    Add
+                  </button>
+                </div>
+              </div>
+            </form>
+          </article>
+          <article>
+            <h2 class="list_2_title">Work Experience</h2>
+            <ul id="work-experience-list" class="list_2"></ul>
+            <button
+              class="list_2_more-button"
+              id="add-work-experience-button"
+              style="display: none"
+              onclick="toggleWorkExperienceForm()"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+          </article>
+
+          <form
+            class="list_2-form"
+            id="work-experience-form"
+            style="display: none"
+            workExperience-data-mode=""
+          >
+            <div class="form-header">
+              <button
+                type="button"
+                id="hide-form-button"
+                onclick="toggleWorkExperienceForm()"
+              >
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <div class="form-body">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="company-name"
+                  id="company-name"
+                  placeholder="Company name"
+                />
+                <input
+                  type="text"
+                  class="job-title"
+                  id="job-title"
+                  placeholder="Job title"
+                />
+                <input
+                  type="text"
+                  class="work-duration"
+                  id="work-duration"
+                  placeholder="Work duration  Example:  2014 - 2021"
+                />
+                <textarea
+                  class="work-description"
+                  id="work-description"
+                  placeholder="Work description"
+                ></textarea>
+                <button
+                  type="button"
+                  class="add-button"
+                  onclick="addWorkExperience()"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+    <footer>&copy; 2023 Romilson Tavares Monteiro</footer>
+    <script src="script.js"></script>
+  </body>
+</html>

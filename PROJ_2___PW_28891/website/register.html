@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="Lostyle.css" />
+    <script src="Loscript.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Register</h1>
+      <form>
+        <div>
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required
+          />
+        </div>
+        <div>
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <button type="button" onclick="signup()">Register</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </body>
+  <script>
+    function signup() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Replace with your signup endpoint URL
+      const url = 'http://localhost:4242/api/user/register';
+
+      const requestBody = { username, password };
+
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Registration failed');
+          }
+        })
+        .then((data) => {
+          // Registration successful
+          alert('Registration successful');
+          window.location.href = 'login.html'; // Redirect to login.html
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('Registration failed');
+        });
+    }
+  </script>
+</html>

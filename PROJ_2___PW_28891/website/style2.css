@@ -1,0 +1,567 @@
+/* Reset de Estilos Padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo do Corpo */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ddd3d3;
+  color: #333;
+}
+
+/* Estilo do Cabeçalho */
+header {
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .icon {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header .nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header .nav ul li {
+  margin-left: 20px;
+}
+
+header .nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Estilo da Seção Sobre Mim */
+.info_aboutme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+}
+
+.info_aboutme .info_name {
+  text-align: center;
+}
+
+.info_aboutme .info_name h1 {
+  font-size: 52px;
+  margin-bottom: 10px;
+}
+
+.info_aboutme .info_name h2 {
+  font-size: 18px;
+  color: #888;
+}
+
+.info_aboutme .abautemeArtical {
+  margin-top: 20px;
+}
+
+.info_aboutme .abautemeArtical h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.info_aboutme .abautemeArtical p {
+  line-height: 1.6;
+}
+
+.info_aboutme .image img {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Aside styles */
+aside {
+  width: 30%;
+  background-image: linear-gradient(to left, #454a4e 0%, #52585a 100%);
+  padding: 20px;
+  color: #fff;
+}
+
+.contact ul {
+  list-style-type: none;
+}
+#contact-list li a i {
+  margin-right: 5px;
+}
+.contact li {
+  margin-bottom: 15px;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #babbcc;
+}
+.contact a:hover {
+  text-decoration: none;
+  color: #131661;
+}
+
+.list_1_title::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #f7e6e6;
+  margin-bottom: 15px;
+}
+
+/* Content styles */
+.content {
+  width: 70%;
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f6f6f6;
+}
+
+.content article {
+  margin-bottom: 20px;
+}
+
+.content h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.more-button {
+  background: none;
+  border: 1px solid #fff;
+  padding: 3px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.more-button:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+.add-button {
+  background-color: #1d4cce;
+  width: 100%;
+  height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #2558a6;
+}
+
+.skills .form-header button,
+.language .form-header button {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Button styles */
+.add-button {
+  background-color: #1d4cce;
+  width: 100%;
+  height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+}
+
+/* Utilizar ícones */
+
+.icon:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f007"; /* Ícone de usuário */
+  margin-right: 5px;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  header .icon {
+    font-size: 20px;
+  }
+
+  header .nav ul li {
+    margin-left: 10px;
+  }
+
+  .info_aboutme {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .info_aboutme .info_name {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .info_aboutme .image img {
+    width: 150px;
+  }
+}
+
+.language,
+.skills,
+.contact {
+  margin-bottom: 25px;
+}
+
+.language h2 {
+  margin-bottom: 10px;
+}
+
+.languagee-form {
+  padding: 10px;
+  border: 1px solid #1d181b;
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+}
+
+.language-name,
+.language-level {
+  width: 100%;
+  padding: 2%;
+  margin: 10px 0px;
+  background-color: transparent;
+}
+
+.languages-list {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.languages-list li {
+  margin-bottom: 5px;
+}
+
+.languages-list progress {
+  width: 100%;
+  height: 25px;
+}
+
+/* Footer styles */
+footer {
+  background-image: linear-gradient(to left, #42474b 10%, #2c2f30 100%);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+#logout-button button {
+  background-color: #f44336;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#logout-button button:hover {
+  background-color: #d32f2f;
+}
+
+.login a,
+.signup a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #474d4c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.login a:hover,
+.signup a:hover {
+  background-color: #1c2aa5;
+}
+
+/* Estilo da Seção Education */
+
+article h2 {
+  font-size: 40px;
+  padding-top: 20px;
+}
+
+.list_2_title::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #000000;
+  margin-bottom: 15px;
+}
+
+.list_2 {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.list_2 li {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.list_2 li span {
+  font-weight: bold;
+  font-size: 24px;
+}
+.list_2 li p {
+  padding: 0% 5px;
+  font-size: 14px;
+}
+
+.list_2-form {
+  padding: 10px;
+  border: 1px solid #1d181b;
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+}
+
+.list_2-form .form-header button {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+}
+
+.list_2-form .form-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.list_2-form .input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.list_2-form .input-group input,
+.list_2-form .input-group select,
+.list_2-form .input-group textarea {
+  width: 100%;
+  padding: 1%;
+  margin: 5px 0;
+  background-color: transparent;
+}
+
+.list_2_more-button {
+  background: none;
+  border: 1px solid #000000;
+  padding: 3px;
+  border-radius: 50%;
+  color: #020101;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.list_2_more-button:hover {
+  background-color: #000000ad;
+  color: #ffffff;
+}
+.contact-item,
+.skill-item,
+.language-item {
+  margin-left: 2%;
+  display: block;
+  justify-content: space-between;
+}
+.language-item button,
+.contact-item button,
+.education-item button {
+  background-color: transparent;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+.language-item button:hover,
+.contact-item button:hover,
+.skill-item button:hover {
+  color: #000000;
+}
+#editaboutme button {
+  background-color: transparent;
+  border: none;
+  color: #4c4a55;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 20px;
+  transition: color 0.3s;
+}
+
+#editaboutme {
+  padding-top: 20px;
+}
+
+#editaboutme button:hover {
+  color: #000000;
+}
+
+.workexperience-item button,
+.skill-item button {
+  background-color: transparent;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+.workexperience-item button:hover,
+.education-item button:hover {
+  color: #000000;
+}
+
+#add-about-me-button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#about-me-form {
+  padding: 10px;
+  border: 1px solid #1d181b;
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+}
+
+#about-me-form .form-header button {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+}
+
+#about-me-form input,
+#about-me-form select,
+#about-me-form textarea {
+  width: 100%;
+  padding: 1%;
+  margin: 5px 0;
+  background-color: transparent;
+}
+
+#about-me-form button {
+  background-color: #007bff;
+  width: 100%;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.list_2-form {
+  padding: 10px;
+  border: 1px solid #1d181b;
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+}
+
+.list_2-form .form-header button {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+}
+
+.list_2-form .form-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.list_2-form .input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.list_2-form .input-group input,
+.list_2-form .input-group select,
+.list_2-form .input-group textarea {
+  width: 100%;
+  padding: 1%;
+  margin: 5px 0;
+  background-color: transparent;
+}
+
+.list_2_more-button {
+  background: none;
+  border: 1px solid #000000;
+  padding: 3px;
+  border-radius: 50%;
+  color: #020101;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.list_2_more-button:hover {
+  background-color: #000000ad;
+  color: #ffffff;
+}

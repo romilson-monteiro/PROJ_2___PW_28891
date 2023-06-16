@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="Lostyle.css" />
+    <script src="Loscript.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+      <form>
+        <div>
+          <i class="fas fa-user"></i>
+          <input
+            type="username"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required
+          />
+        </div>
+        <div>
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+          />
+        </div>
+        <button type="button" onclick="login()">Login</button>
+        <p id="error-message" style="color: red; display: none"></p>
+      </form>
+      <p>Don't have an account? <a href="register.html">Register</a></p>
+    </div>
+  </body>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const token = localStorage.getItem('token-iusabndkjanbksd');
+      if (token) {
+        // Redirect to cv_page.html if a valid token exists
+        window.location.href = 'cv_page.html';
+      }
+    });
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      const url = 'http://localhost:4242/api/user/login';
+
+      const requestBody = { username, password };
+
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Invalid credentials');
+          }
+        })
+        .then((data) => {
+          localStorage.setItem('token-iusabndkjanbksd', data.token);
+          window.location.href = 'cv_page.html'; // Redirect to cv_page.html
+        })
+        .catch((error) => {
+          document.getElementById('error-message').innerText = error.message;
+          document.getElementById('error-message').style.display = 'block';
+          console.error('Error:', error);
+        });
+    }
+  </script>
+</html>
